@@ -1,0 +1,22 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=eyJhIjoiNTE3ZDRjZTA0OGI2NTk1ODZlMWVlYzNiM2MyNDM1MDciLCJ0IjoiNTBlYzI5MWItYmY2ZC00YzFjLWIxNTItMDgwM2Q5NDUxOTAyIiwicyI6Ik16TTBaRE16Tm1RdE16STNOeTAwWmpFNExXRXpaVFF0TVRVMk9EY3lPRGt5TURnMFlUTXdNbUkxTVRJdE1qZGtOeTAwTVRRNUxXRmpZalV0TlRabFlUVTRZVGxtWlRZNSJ9
+    networks:
+      - web
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    container_name: nginx-proxy
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
