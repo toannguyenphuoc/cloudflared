@@ -70,7 +70,6 @@ cp .env.example .env
 |-------------|----------|-------------------|
 | `000-default.conf` | `_` (default) | `dntr-la13_web` |
 | `stnn.conf` | `stnn.congnghetintien.vn` | `stnn_web` |
-| `sotaynongnghiep.conf` | `stnn.congnghetintien.vn` | `stnn_web` |
 | `dntrdongthap.conf` | `store.congnghetintien.vn` | `dntr-la13_web` |
 | `dulich-myngai.conf` | `dulich-myngai.congnghetintien.vn` | `dulich-myngai_web` |
 | `ketnoitanlong.conf` | `kntl.congnghetintien.vn` | `kntl_web` |
